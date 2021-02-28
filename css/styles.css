@@ -67,13 +67,10 @@ button {
   align-items: center;
 }
 
-.header {
-  border-bottom: 1px solid #ececec;
-}
-
 .nav {
   justify-content: space-between;
   min-height: 80px;
+  border-bottom: 1px solid #ececec;
 }
 
 .logo {
@@ -90,7 +87,20 @@ button {
 }
 
 .nav-link.active {
+  position: relative;
   color: var(--brand-color);
+}
+
+.nav-link.active::after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--brand-color);
+  border-radius: 2px;
+  bottom: 0;
+  left: 0;
 }
 
 .nav-link {
@@ -101,8 +111,8 @@ button {
   line-height: 100%;
   letter-spacing: 0.02em;
 
-  /* padding-top: 32px;
-  padding-bottom: 32px; */
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .nav-item {
@@ -152,6 +162,8 @@ button {
   letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-contacts a:hover,
@@ -208,9 +220,12 @@ button {
   border-radius: 4px;
   padding: 10px 32px;
   display: inline-block;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn:hover {
+.btn:hover, :focus {
   background-color: #ffffff;
   color: var(--text-color-primary);
 }
@@ -270,6 +285,10 @@ button {
   padding-bottom: var(--set-gap94);
 }
 
+.whatwedo-list {
+  display: inline-flex;;
+}
+
 .whatwedo h2,
 .team h2,
 .clients h2 {
@@ -281,14 +300,46 @@ button {
   text-align: center;
 }
 
+.whatwedo-container {
+  justify-content: space-between;
+}
+
 .whatwedopic {
-  display: block;
   width: calc(100% / 3 - var(--set-gap30));
   margin-right: var(--set-gap30);
+  display: block;
+  position: relative;
 }
 
 .whatwedopic:last-child {
   margin-right: 0;
+}
+
+.team-sl-list,
+.whatwedo-text-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatwedo-text-thumb {
+  position: absolute;
+  width: 370px;
+  min-height: 70px;
+  bottom: 4px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.whatwedo-desc {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 146%;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  align-items: center;
 }
 
 .team {
@@ -310,12 +361,6 @@ button {
   padding-right: 32px;
 }
 
-.team-sl-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .team-link {
   display: flex;
   align-items: center;
@@ -324,6 +369,8 @@ button {
   width: 44px;
   border-radius: 50%;
   margin-right: 10px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-link:last-child {
@@ -341,6 +388,8 @@ button {
 
 .team-link-icon {
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icons:hover .team-link-icon {
@@ -386,6 +435,9 @@ button {
   justify-content: center;
   align-items: center;
   color: #afb1b8;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-container:hover,
@@ -410,6 +462,8 @@ button {
   font-size: 14px;
   line-height: 146%;
   letter-spacing: 0.03em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #footer .nav-contacts a:hover,
@@ -482,6 +536,8 @@ button {
   border-radius: 50%;
   margin-right: 10px;
   color: #ffffff;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sb-link:last-child {
@@ -526,6 +582,10 @@ button {
   line-height: 162%;
   text-align: center;
   letter-spacing: 0.03em;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .radio-btn:last-child {
@@ -557,6 +617,8 @@ button {
   height: 404px;
   background-color: var(--background-color);
   margin: 15px;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .products:hover,
@@ -565,8 +627,38 @@ button {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.products-overlay-box {
+  position: relative;
+  overflow: hidden;
+}
+
 .products img {
   display: block;
+}
+
+.products-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.products:hover .products-overlay {
+  transform: translateY(0);
+}
+
+.products-overlay p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
 .product-cont {
