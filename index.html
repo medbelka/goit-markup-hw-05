@@ -44,7 +44,18 @@
             <section class="main-banner overlay">
                 <div class="container banner">
                     <h1 class="banner-slogan">Эффективные решения<br>для вашего бизнеса</h1>
-                    <button type="button" class="btn">Заказать услугу</button>
+                    <button type="button" class="btn" data-modal-open>Заказать услугу</button>
+                    <div class="backdrop is-hidden" data-modal>
+                        <div class="modal">
+                            <div class="modal-box">
+                                <button type="button" class="close-btn" data-modal-close>
+                                    <svg width="11px" height="11px">
+                                        <use href="./img/icons/icon-sprite.svg#icon-krestik"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!--preferences section-->
