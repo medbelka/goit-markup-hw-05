@@ -29,14 +29,18 @@ ul {
 }
 
 h1,
+h2,
 h3,
 h4,
-p,
-.product-title {
+p {
   margin: 0;
 }
 
-h2 {
+.hidden {
+  display: none;
+}
+
+.section-title {
   margin-top: 0;
   margin-bottom: 50px;
 }
@@ -60,17 +64,20 @@ button {
 }
 
 .nav,
-.header-container,
+.nav-container,
 .main-banner,
 .nav-panel {
   display: flex;
   align-items: center;
 }
 
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
 .nav {
   justify-content: space-between;
   min-height: 80px;
-  border-bottom: 1px solid #ececec;
 }
 
 .logo {
@@ -108,7 +115,7 @@ button {
   color: var(--text-color-primary);
   font-weight: 500;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0.02em;
 
   padding-top: 32px;
@@ -128,7 +135,7 @@ button {
 }
 
 .nav-panel a:hover,
-:focus {
+.nav-panel a:focus {
   color: var(--brand-color);
 }
 
@@ -158,7 +165,7 @@ button {
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
@@ -167,7 +174,7 @@ button {
 }
 
 .nav-contacts a:hover,
-:focus {
+.nav-contacts a:focus {
   color: var(--brand-color);
 }
 
@@ -203,7 +210,7 @@ button {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 44px;
-  line-height: 116%;
+  line-height: 1.16;
   letter-spacing: 0.06em;
   text-align: center;
   margin-bottom: 30px;
@@ -214,7 +221,7 @@ button {
   color: var(--background-color);
   font-weight: 700;
   font-size: 16px;
-  line-height: 160%;
+  line-height: 1.6;
   letter-spacing: 0.06em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -225,7 +232,8 @@ button {
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn:hover, :focus {
+.btn:hover,
+.btn:focus {
   background-color: #ffffff;
   color: var(--text-color-primary);
 }
@@ -288,7 +296,7 @@ button {
   fill: var(--brand-color);
 }
 
-.section-preferences {
+.section {
   padding-top: var(--set-gap94);
 }
 
@@ -324,7 +332,7 @@ button {
   color: var(--text-color-primary);
   font-weight: 700;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -333,13 +341,14 @@ button {
   color: var(--text-color-secondary);
   font-weight: 400;
   font-size: 14px;
-  line-height: 146%;
+  line-height: 1.46;
   letter-spacing: 0.03em;
 }
 
-.section-gap,
-.examples {
-  padding-top: var(--set-gap94);
+.whatwedo,
+.team,
+.clients,
+.portfolio {
   padding-bottom: var(--set-gap94);
 }
 
@@ -353,7 +362,7 @@ button {
   color: var(--text-color-primary);
   font-weight: 700;
   font-size: 36px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-align: center;
 }
@@ -392,7 +401,7 @@ button {
   display: block;
   font-weight: 700;
   font-size: 14px;
-  line-height: 146%;
+  line-height: 1.46;
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -436,7 +445,7 @@ button {
 }
 
 .team-link:hover,
-:focus {
+.team-link:focus {
   background-color: var(--brand-color);
 }
 
@@ -457,7 +466,7 @@ button {
 .team h4,
 .team p {
   font-size: 16px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-align: center;
 } 
@@ -499,7 +508,7 @@ button {
 }
 
 .client-container:hover,
-:focus {
+.client-container:focus {
   color: var(--brand-color);
   border: 1px solid var(--brand-color);
 }
@@ -514,19 +523,24 @@ button {
   background-color: #2f303a;
 }
 
-#footer .nav-contacts a {
+#footer .nav-contacts {
   font-weight: 400;
   color: var(--text-color-adrress-op60);
   font-size: 14px;
-  line-height: 146%;
+  line-height: 1.46;
   letter-spacing: 0.03em;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#footer .nav-contacts a:hover,
-:focus {
+#footer .nav-contacts:hover,
+#footer .nav-contacts:focus {
   color: var(--brand-color);
+}
+
+.footer-contacts-list {
+  display: block;
+  margin-bottom: 9px;
 }
 
 .footer-container {
@@ -540,7 +554,7 @@ button {
   color: var(--background-color);
   font-family: 'Raleway', sans-serif;
   font-size: 26px;
-  line-height: 100%;
+  line-height: 1;
   margin-bottom: 20px;
 }
 
@@ -552,7 +566,7 @@ button {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 146%;
+  line-height: 1.71;
   letter-spacing: 0.03em;  
   color: var(--background-color);
 }
@@ -571,7 +585,7 @@ button {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
@@ -603,7 +617,7 @@ button {
 }
 
 .sb-link:hover,
-:focus {
+.sb-link:focus {
   background-color: var(--brand-color);
 }
 
@@ -613,10 +627,6 @@ button {
 
 .sb-icon {
   fill: currentColor;
-}
-
-.hidden {
-  display: none;
 }
 
 .btn-filter {
@@ -637,7 +647,7 @@ button {
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 162%;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
 
@@ -651,7 +661,7 @@ button {
 }
 
 .radio-btn:hover,
-:focus {
+.radio-btn:focus {
   background-color: var(--brand-color);
   color: var(--background-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -680,7 +690,7 @@ button {
 }
 
 .products:hover,
-:focus {
+.products:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -729,6 +739,10 @@ button {
   padding: 20px 24px;
 }
 
+.products:nth-child(-n + 3) {
+  margin-top: 0;
+}
+
 .products:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
@@ -736,7 +750,7 @@ button {
 .product-title {
   font-weight: 700;
   font-size: 18px;
-  line-height: 200%;
+  line-height: 2;
   color: var(--text-color-primary);
   text-align: left;
   letter-spacing: 0.06em;
@@ -746,7 +760,7 @@ button {
 .product-description {
   font-weight: 400;
   font-size: 16px;
-  line-height: 200%;
+  line-height: 1.87;
   color: var(--text-color-secondary);
   text-align: left;
   letter-spacing: 0.03em;
